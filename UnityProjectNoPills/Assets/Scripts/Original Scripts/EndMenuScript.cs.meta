@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 5643b8688edd26b4689f20d616059f7a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - guiSkin: {instanceID: 0}
+  - background: {instanceID: 0}
+  - LOGO: {instanceID: 0}
+  - ForwardButton: {fileID: 8300000, guid: e6cb11505e574094cbb06bc40b3df691, type: 3}
+  - BackButton: {fileID: 8300000, guid: 92775ab2475f5f64f9668fceab67f318, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
