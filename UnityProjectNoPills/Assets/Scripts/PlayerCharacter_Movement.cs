@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerCharacter_Movement : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class PlayerCharacter_Movement : MonoBehaviour {
     public float staminaWait = 2;
     private bool isDraining = false;
     private Rigidbody2D rigidbody;
+    public Image staminaBar;
 
     void Update()
     {
@@ -21,6 +23,7 @@ public class PlayerCharacter_Movement : MonoBehaviour {
         mouseDirection = Input.mousePosition - position;
 
         StaminaRegaining();
+        StaminaUI();
 
         if (DeadzoneCheck())
         {
@@ -46,6 +49,11 @@ public class PlayerCharacter_Movement : MonoBehaviour {
     {
         isDraining = true;
         stamina -= staminaDrain;
+    }
+
+    void StaminaUI()
+    {
+        staminaBar.fillAmount = stamina / 100;
     }
 
     //regains stamina after a certain amount of time
