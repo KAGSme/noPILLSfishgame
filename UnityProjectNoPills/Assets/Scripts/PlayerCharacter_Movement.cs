@@ -9,12 +9,12 @@ public class PlayerCharacter_Movement : MonoBehaviour {
     public float maxSpeed = 5f;
     public float deadzone = 1f;
     private Vector3 mouseDirection;
-    public float stamina = 100;
+    private float stamina = 100;
     public float staminaDrain = 10;
     public float staminRegain = 5;
     public float staminaWait = 2;
     private bool isDraining = false;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbodyThis;
     public Image staminaBar;
 
     void Update()
@@ -41,7 +41,7 @@ public class PlayerCharacter_Movement : MonoBehaviour {
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbodyThis = GetComponent<Rigidbody2D>();
     }
 
     //drains stamina
@@ -81,7 +81,11 @@ public class PlayerCharacter_Movement : MonoBehaviour {
     //applies a circular deadzone to the character
     bool DeadzoneCheck()
     {
-        if (Vector3.Magnitude(mouseDirection)/ 50 > deadzone )
+        Vector3 direction = new Vector3(Mathf.Abs(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x),
+            Mathf.Abs(Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y),
+        0);
+
+        if (direction.magnitude > deadzone)
         {
             return true;
         }
@@ -93,16 +97,16 @@ public class PlayerCharacter_Movement : MonoBehaviour {
     {
         if (Input.GetButton("Fire1"))
         {
-            rigidbody.AddRelativeForce(new Vector2(swimSpeed, 0));
+            rigidbodyThis.AddRelativeForce(new Vector2(swimSpeed, 0));
         }
         if (Input.GetButtonDown("Fire2") && stamina > 0)
         {
-            rigidbody.AddRelativeForce(new Vector2(swimBoost, 0));
+            rigidbodyThis.AddRelativeForce(new Vector2(swimBoost, 0));
             StaminaDraining();
         }
-        if (rigidbody.velocity.magnitude > maxSpeed)
+        if (rigidbodyThis.velocity.magnitude > maxSpeed)
         {
-            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
+            rigidbodyThis.velocity = rigidbodyThis.velocity.normalized * maxSpeed;
         }
 
     }
