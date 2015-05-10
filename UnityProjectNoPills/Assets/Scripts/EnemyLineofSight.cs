@@ -62,7 +62,11 @@ public class EnemyLineofSight : MonoBehaviour {
                     player = hit.collider.gameObject;
                 }
                 Debug.Log("Player Seen");
-                playerInSight = true;
+                if (!other.GetComponent<PlayerCharacter_Health>().IsInvisible)
+                {
+                    playerInSight = true;
+                }
+                else { playerInSight = false; }
             }
         }
     }

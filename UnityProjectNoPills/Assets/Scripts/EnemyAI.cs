@@ -15,7 +15,9 @@ public class EnemyAI : MonoBehaviour {
     public float patrolWaitTime = 1f;
     public float searchWaitTime = 5f;
     public bool patrolLoop;
+    public bool justLooksForPlayer;
     public int damageToPlayer;
+    public float turnSpeed = 8;
 
     private GameObject player;
     private EnemyLineofSight elSight;
@@ -24,6 +26,7 @@ public class EnemyAI : MonoBehaviour {
     private Transform TargetDestination;
     private EnemyState enemyState = EnemyState.PATROLLING;
     private Rigidbody2D rigidbodyThis;
+    private Vector3 originalPosition;
 
 	// Use this for initialization
 	void Awake () {
@@ -31,6 +34,7 @@ public class EnemyAI : MonoBehaviour {
         rigidbodyThis = gameObject.GetComponent<Rigidbody2D>();
         elSight = GetComponentInChildren<EnemyLineofSight>();
         elSight.Rend.material.color = new Color32(160, 255, 170, 122);
+        originalPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -56,33 +60,60 @@ public class EnemyAI : MonoBehaviour {
             elSight.Rend.material.color = new Color32(255, 160, 160, 122);
             enemyState = EnemyState.CHASING;
         }
-        TargetDestination = patrolWayPoints[wayPointIndex];
-         if(DestinationCloseDistanceCheck())
-         {
-             patrolWaitTimer += Time.deltaTime;
-             if (patrolWaitTimer >= patrolWaitTime)
-             {
-                 patrolWaitTimer = 0;
-                 Debug.Log("Changing Destination");
-                 if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
-                 {
-                     wayPointIndex = -1;
-                 }
-                 if (wayPointIndex == (patrolWayPoints.Length - 1) && !patrolLoop)
-                 {
-                     wayPointIterator = -1;
-                 }
-                 if (wayPointIndex == 0 && !patrolLoop)
-                 {
-                     wayPointIterator = 1;
-                 }
-                     wayPointIndex += wayPointIterator;
-             }
-         }
-         else
-         {
-             MoveTowardsSimple(TargetDestination.position, patrolSpeed);
-         }
+        if (justLooksForPlayer)
+        {
+            TargetDestination = patrolWayPoints[wayPointIndex];
+            patrolWaitTimer += Time.deltaTime;
+            if (patrolWaitTimer >= patrolWaitTime)
+            {
+                patrolWaitTimer = 0;
+                Debug.Log("Changing Destination");
+                if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
+                {
+                    wayPointIndex = -1;
+                }
+                if (wayPointIndex == (patrolWayPoints.Length - 1) && !patrolLoop)
+                {
+                    wayPointIterator = -1;
+                }
+                if (wayPointIndex == 0 && !patrolLoop)
+                {
+                    wayPointIterator = 1;
+                }
+                wayPointIndex += wayPointIterator;
+            }
+            LooksAtSimple(TargetDestination.position);
+        }
+        else
+        {
+            TargetDestination = patrolWayPoints[wayPointIndex];
+            if (DestinationCloseDistanceCheck(TargetDestination.position))
+            {
+                patrolWaitTimer += Time.deltaTime;
+                if (patrolWaitTimer >= patrolWaitTime)
+                {
+                    patrolWaitTimer = 0;
+                    Debug.Log("Changing Destination");
+                    if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
+                    {
+                        wayPointIndex = -1;
+                    }
+                    if (wayPointIndex == (patrolWayPoints.Length - 1) && !patrolLoop)
+                    {
+                        wayPointIterator = -1;
+                    }
+                    if (wayPointIndex == 0 && !patrolLoop)
+                    {
+                        wayPointIterator = 1;
+                    }
+                    wayPointIndex += wayPointIterator;
+                }
+            }
+            else
+            {
+                MoveTowardsSimple(TargetDestination.position, patrolSpeed);
+            }
+        }
     }
 
     float chaseTimer = 0;
@@ -100,6 +131,12 @@ public class EnemyAI : MonoBehaviour {
                 enemyState = EnemyState.SEARCHING;
             }
         }
+        if (player.GetComponent<PlayerCharacter_Health>().IsInvisible)
+        {
+            chaseTimer = 0;
+            elSight.Rend.material.color = new Color32(255, 255, 160, 122);
+            enemyState = EnemyState.SEARCHING;
+        }
     }
     float searchWaitTimer = 0;
     void Searching()
@@ -109,9 +146,25 @@ public class EnemyAI : MonoBehaviour {
             searchWaitTimer += Time.deltaTime;
             if (searchWaitTimer > searchWaitTime)
             {
-                searchWaitTimer = 0;
-                enemyState = EnemyState.PATROLLING;
-                elSight.Rend.material.color = new Color32(160, 255, 170, 122);
+                if (justLooksForPlayer)
+                {
+                    if (!DestinationCloseDistanceCheck(originalPosition))
+                    {
+                        MoveTowardsSimple(originalPosition, patrolSpeed);
+                    }
+                    else
+                    {
+                        searchWaitTimer = 0;
+                        enemyState = EnemyState.PATROLLING;
+                        elSight.Rend.material.color = new Color32(160, 255, 170, 122);
+                    }
+                }
+                else
+                {
+                    searchWaitTimer = 0;
+                    enemyState = EnemyState.PATROLLING;
+                    elSight.Rend.material.color = new Color32(160, 255, 170, 122);
+                }
             }
         }
         else 
@@ -130,9 +183,16 @@ public class EnemyAI : MonoBehaviour {
         rigidbodyThis.AddRelativeForce(new Vector2(patrolSpeed, 0));
     }
 
-    bool DestinationCloseDistanceCheck()
+    void LooksAtSimple(Vector3 destination)
     {
-        if (Mathf.Abs(Vector3.Magnitude(TargetDestination.position - transform.position)) < 4.0f)
+        var direction = destination - transform.position;
+        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), turnSpeed * Time.deltaTime);
+    }
+
+    bool DestinationCloseDistanceCheck(Vector3 TargetDestination)
+    {
+        if (Mathf.Abs(Vector3.Magnitude(TargetDestination - transform.position)) < 4.0f)
         {
             return true;
         }
