@@ -8,10 +8,16 @@ public class EnemyLineofSight : MonoBehaviour {
     private bool playerInSight;
     private GameObject player;
     private Renderer rend;
+    private bool isInvisible;
 
     public Renderer Rend 
     {
         get { return rend; }
+    }
+
+    public bool IsInvisible
+    {
+        get { return isInvisible; }
     }
 
     public GameObject Player
@@ -37,6 +43,8 @@ public class EnemyLineofSight : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
+            player = other.gameObject;
+            isInvisible = other.GetComponent<PlayerCharacter_Health>().IsInvisible;
             Vector3 direction1 = other.transform.position - transform.position;
             Vector3 direction2 = other.transform.TransformPoint(Vector3.right * 2) - transform.position;
             Vector3 direction3 = other.transform.TransformPoint(Vector3.right * -2) - transform.position;
@@ -49,25 +57,12 @@ public class EnemyLineofSight : MonoBehaviour {
             Debug.DrawLine(transform.position, other.transform.TransformPoint(Vector3.right * -2), Color.red);
             if (hit.collider.gameObject.tag == "Player" || hitTop.collider.gameObject.tag == "Player" || hitBot.collider.gameObject.tag == "Player")
             {
-                if (hit.collider.gameObject.tag == "Player")
-                {
-                    player = hit.collider.gameObject;
-                }
-                if (hitTop.collider.gameObject.tag == "Player")
-                {
-                    player = hit.collider.gameObject;
-                }
-                if (hitBot.collider.gameObject.tag == "Player")
-                {
-                    player = hit.collider.gameObject;
-                }
-                Debug.Log("Player Seen");
-                if (!other.GetComponent<PlayerCharacter_Health>().IsInvisible)
+                if (!isInvisible)
                 {
                     playerInSight = true;
                 }
-                else { playerInSight = false; }
             }
+            else { playerInSight = false; }
         }
     }
 
@@ -76,7 +71,6 @@ public class EnemyLineofSight : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             playerInSight = false;
-            Debug.Log("Player not in sight");
         }
     }
 

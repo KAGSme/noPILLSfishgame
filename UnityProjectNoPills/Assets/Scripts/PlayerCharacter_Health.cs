@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 
 public class PlayerCharacter_Health : MonoBehaviour
 {
@@ -8,7 +9,12 @@ public class PlayerCharacter_Health : MonoBehaviour
     public int healthPickUp = 33;
     public Image healthBar;
     private bool isInvisible = false;
-
+    public float invincibiltyAfterHitTime = 1.0f;
+    bool isInvincible = false;
+    public float pillEffectTime = 5;
+    Rigidbody2D rig;
+    public GameObject illEffect;
+        
     public bool IsInvisible
     {
         get { return isInvisible; }
@@ -18,17 +24,67 @@ public class PlayerCharacter_Health : MonoBehaviour
     void Awake()
     {
         healthPoints = 100;
+        rig = GetComponent<Rigidbody2D>();
     }
 
+    void Start()
+    {
+        var vortex = Camera.main.gameObject.GetComponent<Vortex>();
+        vortex.enabled = false;
+    }
+
+    float damageTimer;
     void Update()
     {
         if (healthPoints > 100) healthPoints = 100;
         healthBar.fillAmount = healthPoints / 100;
+
+        if (GetComponentInChildren<Renderer>().material.color == Color.red)
+        {
+            isInvincible = true;
+            damageTimer += Time.deltaTime;
+            if (damageTimer >= invincibiltyAfterHitTime)
+            {
+                damageTimer = 0;
+                isInvincible = false;
+                GetComponentInChildren<Renderer>().material.color = Color.white;
+            }
+        }
+        if (effectIsOn)
+        {
+            effectTimer += Time.deltaTime;
+            if (effectTimer > pillEffectTime)
+            {
+                var vortex = Camera.main.gameObject.GetComponent<Vortex>();
+                var mb = Camera.main.GetComponent<MotionBlur>();
+                vortex.enabled = false;
+                mb.enabled = false;
+                effectIsOn = false;
+                effectTimer = 0;
+            }
+        }
+        if (drunkIsOn)
+        {
+            illEffect.SetActive(true);
+            drunkTimer += Time.deltaTime;
+            rig.AddRelativeForce(new Vector2(Random.Range(-100, 100), Random.Range(-100, 100)));
+            if (drunkTimer > pillEffectTime)
+            {
+                illEffect.SetActive(false);
+                drunkIsOn = false;
+                drunkTimer = 0;
+            }
+        }
     }
 
     public void HealthDecrease(int damage)
     {
-        if (healthPoints > 0) { healthPoints -= damage; }
+        if (healthPoints > 0 && isInvincible == false) 
+        {
+            healthPoints -= damage;
+            rig.AddRelativeForce(new Vector2(Random.Range(-400, 400), Random.Range(-400, 400)));
+            GetComponentInChildren<Renderer>().material.color = Color.red;
+        }
     }
 
     public void HealthIncrease(int increase)
@@ -43,5 +99,20 @@ public class PlayerCharacter_Health : MonoBehaviour
             Destroy(coll.gameObject);
             HealthIncrease(healthPickUp);
         }
+    }
+
+    float effectTimer = 0;
+    private bool effectIsOn = false;
+    public bool EffectIsOn
+    {
+        get { return effectIsOn; }
+        set { effectIsOn = value; }
+    }
+    float drunkTimer = 0;
+    private bool drunkIsOn = false;
+    public bool DrunkIsOn
+    {
+        get { return drunkIsOn; }
+        set { drunkIsOn = value; }
     }
 }

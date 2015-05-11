@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour {
     public int damageToPlayer;
     public float turnSpeed = 8;
 
-    private GameObject player;
+
     private EnemyLineofSight elSight;
     private int wayPointIndex = 0;
     private int wayPointIterator = 1;
@@ -33,10 +33,14 @@ public class EnemyAI : MonoBehaviour {
         wayPointIndex = 0;
         rigidbodyThis = gameObject.GetComponent<Rigidbody2D>();
         elSight = GetComponentInChildren<EnemyLineofSight>();
-        elSight.Rend.material.color = new Color32(160, 255, 170, 122);
         originalPosition = transform.position;
 	}
-	
+
+    void Start()
+    {
+        elSight.Rend.material.color = new Color32(160, 255, 170, 122);
+    }
+
 	// Update is called once per frame
 	void Update () {
         switch(enemyState){
@@ -55,7 +59,7 @@ public class EnemyAI : MonoBehaviour {
     float patrolWaitTimer = 0;
     void Patrolling()
     {
-        if (elSight.PlayerInSight)
+        if (elSight.PlayerInSight && !elSight.IsInvisible)
         {
             elSight.Rend.material.color = new Color32(255, 160, 160, 122);
             enemyState = EnemyState.CHASING;
@@ -67,7 +71,6 @@ public class EnemyAI : MonoBehaviour {
             if (patrolWaitTimer >= patrolWaitTime)
             {
                 patrolWaitTimer = 0;
-                Debug.Log("Changing Destination");
                 if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
                 {
                     wayPointIndex = -1;
@@ -93,7 +96,6 @@ public class EnemyAI : MonoBehaviour {
                 if (patrolWaitTimer >= patrolWaitTime)
                 {
                     patrolWaitTimer = 0;
-                    Debug.Log("Changing Destination");
                     if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
                     {
                         wayPointIndex = -1;
@@ -119,8 +121,7 @@ public class EnemyAI : MonoBehaviour {
     float chaseTimer = 0;
     void Chasing()
     {
-        player = elSight.Player;
-        MoveTowardsSimple(player.transform.position, chaseSpeed);
+        MoveTowardsSimple(elSight.Player.transform.position, chaseSpeed);
         if (!elSight.PlayerInSight)
         {
             chaseTimer += Time.deltaTime;
@@ -131,7 +132,7 @@ public class EnemyAI : MonoBehaviour {
                 enemyState = EnemyState.SEARCHING;
             }
         }
-        if (player.GetComponent<PlayerCharacter_Health>().IsInvisible)
+        if (elSight.IsInvisible)
         {
             chaseTimer = 0;
             elSight.Rend.material.color = new Color32(255, 255, 160, 122);
@@ -141,7 +142,7 @@ public class EnemyAI : MonoBehaviour {
     float searchWaitTimer = 0;
     void Searching()
     {
-        if (!elSight.PlayerInSight)
+        if (!elSight.PlayerInSight || elSight.IsInvisible)
         {
             searchWaitTimer += Time.deltaTime;
             if (searchWaitTimer > searchWaitTime)
@@ -219,7 +220,6 @@ public class EnemyAI : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Player")
         {
-            Debug.Log("hit");
             coll.gameObject.GetComponent<PlayerCharacter_Health>().HealthDecrease(damageToPlayer);
         }
     }

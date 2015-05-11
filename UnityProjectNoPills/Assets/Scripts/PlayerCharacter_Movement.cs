@@ -17,6 +17,9 @@ public class PlayerCharacter_Movement : MonoBehaviour {
     private Rigidbody2D rigidbodyThis;
     public Image staminaBar;
 
+    float tapTimer = 0;
+    int tapCount = 0;
+
     void Update()
     {
         var position = Camera.main.WorldToScreenPoint(transform.position);
@@ -28,6 +31,17 @@ public class PlayerCharacter_Movement : MonoBehaviour {
         if (DeadzoneCheck())
         {
             ObjectLookAtMouse();
+        }
+
+        if (tapTimer > 0)
+        {
+            tapTimer -= Time.deltaTime; 
+        }
+        else { tapCount = 0; }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            tapTimer = 0.8f;
+            tapCount += 1;
         }
     }
 
@@ -99,7 +113,7 @@ public class PlayerCharacter_Movement : MonoBehaviour {
         {
             rigidbodyThis.AddRelativeForce(new Vector2(swimSpeed, 0));
         }
-        if (Input.GetButtonDown("Fire2") && stamina > 0)
+        if (((Input.GetButtonDown("Fire1") && tapCount >= 1) || Input.GetButtonDown("Fire2")) && stamina > 0)
         {
             rigidbodyThis.AddRelativeForce(new Vector2(swimBoost, 0));
             StaminaDraining();
@@ -117,4 +131,5 @@ public class PlayerCharacter_Movement : MonoBehaviour {
      var angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
      transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); 
     }
+
 }
