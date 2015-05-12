@@ -14,6 +14,11 @@ public class PlayerCharacter_Health : MonoBehaviour
     public float pillEffectTime = 5;
     Rigidbody2D rig;
     public GameObject illEffect;
+
+    public float HealthPoints
+    {
+        get { return healthPoints; }
+    }
         
     public bool IsInvisible
     {
@@ -37,6 +42,7 @@ public class PlayerCharacter_Health : MonoBehaviour
     void Update()
     {
         if (healthPoints > 100) healthPoints = 100;
+        if (healthPoints < 0) healthPoints = 0;
         healthBar.fillAmount = healthPoints / 100;
 
         if (GetComponentInChildren<Renderer>().material.color == Color.red)
@@ -67,7 +73,7 @@ public class PlayerCharacter_Health : MonoBehaviour
         {
             illEffect.SetActive(true);
             drunkTimer += Time.deltaTime;
-            rig.AddRelativeForce(new Vector2(Random.Range(-100, 100), Random.Range(-100, 100)));
+            rig.AddRelativeForce(new Vector2(Random.Range(-100, 100), Random.Range(-200, 200)));
             if (drunkTimer > pillEffectTime)
             {
                 illEffect.SetActive(false);
@@ -79,7 +85,7 @@ public class PlayerCharacter_Health : MonoBehaviour
 
     public void HealthDecrease(int damage)
     {
-        if (healthPoints > 0 && isInvincible == false) 
+        if (isInvincible == false) 
         {
             healthPoints -= damage;
             rig.AddRelativeForce(new Vector2(Random.Range(-400, 400), Random.Range(-400, 400)));

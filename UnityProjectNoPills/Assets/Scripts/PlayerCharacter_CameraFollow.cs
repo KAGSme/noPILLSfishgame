@@ -16,6 +16,9 @@ public class PlayerCharacter_CameraFollow : MonoBehaviour {
     void Start()
     {
         targetDestination = transform.position;
+        targetDestination.y = targetObject.position.y;
+        targetDestination.x = targetObject.position.x;
+        transform.position = targetDestination;
     }
 
     // Update is called once per frame

@@ -5,8 +5,8 @@ public class PillSpawner : MonoBehaviour {
 
     public bool pillFire;
     public GameObject[] pillTypes;
-    public float lowerLimit;
-    public float higherLimit;
+    public float minTimeSpawn;
+    public float maxTimeSpawn;
     Quaternion randomrotationZ;
     float random;
 
@@ -30,7 +30,7 @@ public class PillSpawner : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 1.1f, Screen.height * Random.Range(0.1f, 1f), 0f));
             Vector3 spawnPosition = ray.GetPoint(-ray.origin.z / Vector3.Dot(ray.direction, Vector3.forward));
             GameObject Target = (GameObject)Instantiate(pillTypes[Random.Range(0,3)], spawnPosition, randomrotationZ);
-            timer = Time.time + Random.Range(lowerLimit, higherLimit);
+            timer = Time.time + Random.Range(minTimeSpawn, maxTimeSpawn);
         }
     }
 
