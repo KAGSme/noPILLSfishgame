@@ -5,14 +5,22 @@ public class GameData : MonoBehaviour {
 
     public static GameData gameData;
     private Vector3 checkPoint;
+    private bool levelStart = true;
     private bool audioIsOn;
 
     void Start()
     {
-        if (checkPoint == null)
+        if (levelStart)
         {
             checkPoint = GameControl_MAIN.gameControl.player.transform.position;
+            levelStart = false;
         }
+    }
+
+    public bool LevelStart
+    {
+        get { return levelStart; }
+        set { levelStart = value; }
     }
 
     public Vector3 CheckPoint
@@ -29,9 +37,10 @@ public class GameData : MonoBehaviour {
 
     void Update()
     {
-        if (CheckPoint == null)
+        if (levelStart)
         {
             CheckPoint = GameControl_MAIN.gameControl.player.transform.position;
+            levelStart = false;
         }
     }
 

@@ -3,13 +3,14 @@ using System.Collections;
 
 public class LoadNextLevel : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public string nextLevel;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GameData.gameData.LevelStart = true;
+            Application.LoadLevel(nextLevel);
+        }
+    }
 }

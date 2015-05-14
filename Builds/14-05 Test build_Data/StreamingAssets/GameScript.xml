@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <English>
+    <healthText>Health:</healthText>
+    <staminaText>Stamina: </staminaText>
+  </English>
+  <German>
+    <healthText>Gesundheit:</healthText>
+    <staminaText>Ausdauer: </staminaText>
+  </German>
+</languages>

@@ -40,7 +40,7 @@ public class PlayerCharacter_Movement : MonoBehaviour {
         else { tapCount = 0; }
         if (Input.GetButtonDown("Fire1"))
         {
-            tapTimer = 0.8f;
+            tapTimer = 0.5f;
             tapCount += 1;
         }
     }
