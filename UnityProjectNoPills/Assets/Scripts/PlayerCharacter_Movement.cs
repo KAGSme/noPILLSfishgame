@@ -28,7 +28,7 @@ public class PlayerCharacter_Movement : MonoBehaviour {
         StaminaRegaining();
         StaminaUI();
 
-        if (DeadzoneCheck())
+        if (DeadzoneCheck() && !GameControl_MAIN.gameControl.isPaused)
         {
             ObjectLookAtMouse();
         }

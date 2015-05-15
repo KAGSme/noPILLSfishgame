@@ -8,6 +8,7 @@ public class GameControl_MAIN : MonoBehaviour {
     public static GameControl_MAIN gameControl;
     public GameObject player;
     private PlayerCharacter_Health playerHealth;
+    public bool isPaused;
 
     void OnEnable()
     {
