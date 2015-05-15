@@ -177,11 +177,14 @@ public class EnemyAI : MonoBehaviour {
 
     void MoveTowardsSimple(Vector3 destination, float speed)
     {
-        var direction = destination - transform.position;
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), 8f * Time.deltaTime);
+        if (!GameControl_MAIN.gameControl.isPaused)
+        {
+            var direction = destination - transform.position;
+            var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), 8f * Time.deltaTime);
 
-        rigidbodyThis.AddRelativeForce(new Vector2(patrolSpeed, 0));
+            rigidbodyThis.AddRelativeForce(new Vector2(patrolSpeed, 0));
+        }
     }
 
     void LooksAtSimple(Vector3 destination)
@@ -216,7 +219,7 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnCollisionStay2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Player")
         {

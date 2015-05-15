@@ -9,6 +9,7 @@ public class GameControl_MAIN : MonoBehaviour {
     public GameObject player;
     private PlayerCharacter_Health playerHealth;
     public bool isPaused;
+    public GameObject trailEffect;
 
     void OnEnable()
     {
@@ -33,6 +34,11 @@ public class GameControl_MAIN : MonoBehaviour {
         {
             Debug.Log("restart");
             Application.LoadLevel(Application.loadedLevel);
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(trailEffect, transform.position, transform.rotation);
         }
 	}
 

@@ -14,6 +14,7 @@ public class PlayerCharacter_Health : MonoBehaviour
     public float pillEffectTime = 5;
     Rigidbody2D rig;
     public GameObject illEffect;
+    bool isHit;
 
     public float HealthPoints
     {
@@ -45,17 +46,20 @@ public class PlayerCharacter_Health : MonoBehaviour
         if (healthPoints < 0) healthPoints = 0;
         healthBar.fillAmount = healthPoints / 100;
 
-        if (GetComponentInChildren<Renderer>().material.color == Color.red)
+        if (isHit)
         {
+            GetComponentInChildren<Renderer>().material.color = Color.red;
             isInvincible = true;
             damageTimer += Time.deltaTime;
             if (damageTimer >= invincibiltyAfterHitTime)
             {
                 damageTimer = 0;
                 isInvincible = false;
+                isHit = false;
                 GetComponentInChildren<Renderer>().material.color = Color.white;
             }
         }
+
         if (effectIsOn)
         {
             effectTimer += Time.deltaTime;
@@ -89,7 +93,7 @@ public class PlayerCharacter_Health : MonoBehaviour
         {
             healthPoints -= damage;
             rig.AddRelativeForce(new Vector2(Random.Range(-400, 400), Random.Range(-400, 400)));
-            GetComponentInChildren<Renderer>().material.color = Color.red;
+            isHit = true;
         }
     }
 

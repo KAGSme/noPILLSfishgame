@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Text;
 using System.Xml;
@@ -38,6 +39,20 @@ public class LanguageScriptLoader : MonoBehaviour {
                 break;
             case Languages.GERMAN:
                 languageString = "German";
+                break;
+        }
+    }
+
+    public void SetLanguage(string languageNew)
+    {
+        languageString = languageNew;
+        switch (languageString)
+        {
+            case "English":
+                language = Languages.ENGLISH;
+                break;
+            case "German":
+                language = Languages.GERMAN;
                 break;
         }
     }
