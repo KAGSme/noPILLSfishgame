@@ -10,7 +10,7 @@ public class GameData : MonoBehaviour {
 
     void Start()
     {
-        if (levelStart && Application.loadedLevelName == "MainMenu")
+        if (levelStart && Application.loadedLevelName != "MainMenu")
         {
             checkPoint = GameControl_MAIN.gameControl.player.transform.position;
             levelStart = false;
@@ -37,7 +37,7 @@ public class GameData : MonoBehaviour {
 
     void Update()
     {
-        if (levelStart)
+        if (levelStart && Application.loadedLevelName != "MainMenu")
         {
             CheckPoint = GameControl_MAIN.gameControl.player.transform.position;
             levelStart = false;
