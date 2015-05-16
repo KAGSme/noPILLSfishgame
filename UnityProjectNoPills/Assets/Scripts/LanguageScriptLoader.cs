@@ -22,15 +22,15 @@ public class LanguageScriptLoader : MonoBehaviour {
             languageManager = this;
             DontDestroyOnLoad(gameObject);
         }
-        else { DestroyObject(gameObject); }
+        else { Destroy(gameObject); }
 
-        SetLanguage(language);
         TextAsset textAsset = (TextAsset)Resources.Load("GameScript", typeof(TextAsset));
         xmlDoc.LoadXml(textAsset.text);
     }
 
     public void SetLanguage(Languages languageNew)
     {
+        Debug.Log("L set");
         language = languageNew;
         switch (language)
         {
@@ -45,6 +45,7 @@ public class LanguageScriptLoader : MonoBehaviour {
 
     public void SetLanguage(string languageNew)
     {
+        Debug.Log("L set");
         languageString = languageNew;
         switch (languageString)
         {

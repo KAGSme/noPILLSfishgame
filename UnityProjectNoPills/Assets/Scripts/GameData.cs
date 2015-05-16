@@ -10,7 +10,7 @@ public class GameData : MonoBehaviour {
 
     void Start()
     {
-        if (levelStart && Application.loadedLevelName != "MainMenu")
+        if (levelStart && Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "LevelSelect" && Application.loadedLevelName != "LanguageMenu")
         {
             checkPoint = GameControl_MAIN.gameControl.player.transform.position;
             levelStart = false;
@@ -37,7 +37,7 @@ public class GameData : MonoBehaviour {
 
     void Update()
     {
-        if (levelStart && Application.loadedLevelName != "MainMenu")
+        if (levelStart && Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "LevelSelect" && Application.loadedLevelName != "LanguageMenu")
         {
             CheckPoint = GameControl_MAIN.gameControl.player.transform.position;
             levelStart = false;

@@ -7,7 +7,18 @@
     <one-1>one</one-1>
     <one-2>two</one-2>
     <one-3>three</one-3>
+
+    <MainMenu>Main Menu</MainMenu>
+    <LevelSelect>Level Select</LevelSelect>
+    <Play>Play</Play>
+    <Mute>Mute</Mute>
+    <Back>Back</Back>
+    <Credits>Credits</Credits>
+    <Level1>Level 1</Level1>
+    <Level2>Level 2</Level2>
+    <Level3>Level 3</Level3>
   </English>
+  
   <German>
     <healthText>Gesundheit:</healthText>
     <staminaText>Ausdauer: </staminaText>
@@ -15,5 +26,15 @@
     <one-1>eins</one-1>
     <one-2>zwei</one-2>
     <one-3>drei</one-3>
+
+    <MainMenu>Hauptmenü</MainMenu>
+    <LevelSelect>Bühne Auswählen</LevelSelect>
+    <Play>Spielen</Play>
+    <Mute>stumm</Mute>
+    <Back>Zurück</Back>
+    <Credits>Credits</Credits>
+    <Level1>Bühne 1</Level1>
+    <Level2>Bühne 2</Level2>
+    <Level3>Bühne 3</Level3>
   </German>
 </languages>
