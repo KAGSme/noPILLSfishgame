@@ -17,6 +17,9 @@
     <Level1>Level 1</Level1>
     <Level2>Level 2</Level2>
     <Level3>Level 3</Level3>
+    <npCredit>Game was made in conjunction with the noPILLS Organisation</npCredit>
+    <pause>Pause</pause>
+    <Quit>Quit</Quit>
   </English>
   
   <German>
@@ -36,5 +39,8 @@
     <Level1>Bühne 1</Level1>
     <Level2>Bühne 2</Level2>
     <Level3>Bühne 3</Level3>
+    <npCredit>Game was made in conjunction with the noPILLS Organisation</npCredit>
+    <pause>Pause</pause>
+    <Quit>Verlassen</Quit>
   </German>
 </languages>

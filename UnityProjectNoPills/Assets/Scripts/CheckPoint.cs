@@ -7,7 +7,7 @@ public class CheckPoint : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            GameData.gameData.ChangeCheckPoint(transform.position);
+            GameData.gameData.ChangeCheckPoint(other.gameObject.transform.position);
         }
     }
 }

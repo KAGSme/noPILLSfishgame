@@ -29,8 +29,7 @@ public class Dialogue : MonoBehaviour {
             {
                 dialogue = false;
                 DialogueState();
-                Time.timeScale = 1;
-                GameControl_MAIN.gameControl.isPaused = false;
+                GameControl_MAIN.gameControl.UnPause();
             }
             if (dialogue)
             {
@@ -49,11 +48,10 @@ public class Dialogue : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player" && !used)
         {
-            GameControl_MAIN.gameControl.isPaused = true;
+            GameControl_MAIN.gameControl.Pause();
             dialogue = true;
             used = true;
             DialogueState();
-            Time.timeScale = 0;
             textComponent.text = LanguageScriptLoader.languageManager.LoadString(linesOfDialogue[iterator]);
         }
     }

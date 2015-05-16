@@ -40,7 +40,41 @@ public class GameControl_MAIN : MonoBehaviour {
         {
             Instantiate(trailEffect, transform.position, transform.rotation);
         }
+
+        if (GameData.gameData.AudioIsOn)
+        {
+            AudioListener.volume = 1;
+        }
+        else AudioListener.volume = 0;
 	}
 
+    public void Pause()
+    {
+        isPaused = true;
 
+        if (isPaused) Time.timeScale = 0;
+        else Time.timeScale = 1;
+    }
+
+    public void UnPause()
+    {
+        isPaused = false;
+
+        if (isPaused) Time.timeScale = 0;
+        else Time.timeScale = 1;
+    }
+
+    public void Mute()
+    {
+        GameData.gameData.AudioIsOn = !GameData.gameData.AudioIsOn;
+
+        if (GameData.gameData.AudioIsOn) AudioListener.volume = 1;
+        else AudioListener.volume = 0;
+    }
+
+    public void LoadLevel(string LevelName)
+    {
+        GameData.gameData.LevelStart = true;
+        Application.LoadLevel(LevelName);
+    }
 }

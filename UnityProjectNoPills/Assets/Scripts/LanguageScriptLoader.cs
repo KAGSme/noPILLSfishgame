@@ -24,6 +24,7 @@ public class LanguageScriptLoader : MonoBehaviour {
         }
         else { Destroy(gameObject); }
 
+        SetLanguage(language);
         TextAsset textAsset = (TextAsset)Resources.Load("GameScript", typeof(TextAsset));
         xmlDoc.LoadXml(textAsset.text);
     }
