@@ -3,8 +3,14 @@ using System.Collections;
 
 public class Menu : MonoBehaviour {
 
+    void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     public void LoadLevel(string levelName)
     {
+        GameData.gameData.LevelStart = true;
         Application.LoadLevel(levelName);
     }
 

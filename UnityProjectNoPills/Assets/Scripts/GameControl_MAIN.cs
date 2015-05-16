@@ -26,6 +26,7 @@ public class GameControl_MAIN : MonoBehaviour {
             player.transform.position = GameData.gameData.CheckPoint;
         }
         playerHealth = player.GetComponent<PlayerCharacter_Health>();
+        Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame
