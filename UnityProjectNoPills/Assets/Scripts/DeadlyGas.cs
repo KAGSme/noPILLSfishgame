@@ -9,7 +9,6 @@ public class DeadlyGas : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Cough");
             other.gameObject.GetComponent<PlayerCharacter_Health>().HealthDecrease(gasDamage);
         }
     }
