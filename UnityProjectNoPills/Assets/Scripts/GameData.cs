@@ -4,7 +4,7 @@ using System.Collections;
 public class GameData : MonoBehaviour {
 
     public static GameData gameData;
-    private Vector3 checkPoint;
+    public Vector3 checkPoint;
     private bool levelStart = true;
     private bool audioIsOn;
 
@@ -12,6 +12,7 @@ public class GameData : MonoBehaviour {
     {
         if (levelStart && Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "LevelSelect" && Application.loadedLevelName != "LanguageMenu")
         {
+            Debug.Log("levelStart");
             checkPoint = GameControl_MAIN.gameControl.player.transform.position;
             levelStart = false;
         }
@@ -39,7 +40,8 @@ public class GameData : MonoBehaviour {
     {
         /*if (levelStart && Application.loadedLevelName != "MainMenu" && Application.loadedLevelName != "LevelSelect" && Application.loadedLevelName != "LanguageMenu")
         {
-            CheckPoint = GameControl_MAIN.gameControl.player.transform.position;
+            Debug.Log("levelStart");
+            checkPoint = GameControl_MAIN.gameControl.player.transform.position;
             levelStart = false;
         }*/
     }

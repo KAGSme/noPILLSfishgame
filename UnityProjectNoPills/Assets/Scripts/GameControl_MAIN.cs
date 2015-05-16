@@ -22,8 +22,10 @@ public class GameControl_MAIN : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if(GameData.gameData.CheckPoint != null){
-            player.transform.position = GameData.gameData.CheckPoint;
+        if (!GameData.gameData.LevelStart)
+        {
+            Debug.Log("LevelReset");
+            GameControl_MAIN.gameControl.player.transform.position = GameData.gameData.CheckPoint;
         }
         playerHealth = player.GetComponent<PlayerCharacter_Health>();
         Time.timeScale = 1;

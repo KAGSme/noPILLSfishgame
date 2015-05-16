@@ -31,7 +31,6 @@ public class LanguageScriptLoader : MonoBehaviour {
 
     public void SetLanguage(Languages languageNew)
     {
-        Debug.Log("L set");
         language = languageNew;
         switch (language)
         {

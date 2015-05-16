@@ -39,6 +39,7 @@ public class EnemyAI : MonoBehaviour {
     void Start()
     {
         elSight.Rend.material.color = new Color32(160, 255, 170, 122);
+        elSight.Rend.sortingLayerName = "MiddleGround";
     }
 
 	// Update is called once per frame
@@ -205,16 +206,19 @@ public class EnemyAI : MonoBehaviour {
 
     void OnDrawGizmosSelected() 
     {
-        Gizmos.color = Color.cyan;
-        for (int i = 0; i < patrolWayPoints.Length; i++)
+        if (patrolWayPoints[0] != null)
         {
-            if (i != patrolWayPoints.Length - 1)
+            Gizmos.color = Color.cyan;
+            for (int i = 0; i < patrolWayPoints.Length; i++)
             {
-                Gizmos.DrawLine(patrolWayPoints[i].position, patrolWayPoints[i+1].position);
-            }
-            if (i == patrolWayPoints.Length - 1 && patrolLoop)
-            {
-                Gizmos.DrawLine(patrolWayPoints[i].position, patrolWayPoints[0].position);
+                if (i != patrolWayPoints.Length - 1)
+                {
+                    Gizmos.DrawLine(patrolWayPoints[i].position, patrolWayPoints[i + 1].position);
+                }
+                if (i == patrolWayPoints.Length - 1 && patrolLoop)
+                {
+                    Gizmos.DrawLine(patrolWayPoints[i].position, patrolWayPoints[0].position);
+                }
             }
         }
     }
