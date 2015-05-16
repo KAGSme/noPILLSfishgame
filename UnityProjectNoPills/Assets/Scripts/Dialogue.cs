@@ -9,6 +9,8 @@ public class Dialogue : MonoBehaviour {
     private bool used = false;
     public GameObject DialogueBox;
     public GameObject textObject;
+    public bool loadsNextLevel = false;
+    public string nextLevel;
     Text textComponent;
     int iterator = 0;
 
@@ -30,6 +32,7 @@ public class Dialogue : MonoBehaviour {
                 dialogue = false;
                 DialogueState();
                 GameControl_MAIN.gameControl.UnPause();
+                if(loadsNextLevel) GameControl_MAIN.gameControl.LoadLevel(nextLevel);
             }
             if (dialogue)
             {
