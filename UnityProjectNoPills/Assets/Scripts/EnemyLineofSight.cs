@@ -23,6 +23,7 @@ public class EnemyLineofSight : MonoBehaviour {
     public GameObject Player
     {
         get { return player; }
+        set { player = value; }
     }
 
     public bool PlayerInSight

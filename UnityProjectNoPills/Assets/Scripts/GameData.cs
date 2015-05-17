@@ -6,7 +6,7 @@ public class GameData : MonoBehaviour {
     public static GameData gameData;
     public Vector3 checkPoint;
     private bool levelStart = true;
-    private bool audioIsOn;
+    public bool audioIsOn = true;
 
     void Start()
     {
@@ -16,6 +16,7 @@ public class GameData : MonoBehaviour {
             checkPoint = GameControl_MAIN.gameControl.player.transform.position;
             levelStart = false;
         }
+        AudioListener.pause = !audioIsOn;
     }
 
     public bool LevelStart

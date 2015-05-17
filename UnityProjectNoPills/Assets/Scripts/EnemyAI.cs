@@ -64,6 +64,7 @@ public class EnemyAI : MonoBehaviour {
         {
             elSight.Rend.material.color = new Color32(255, 160, 160, 122);
             enemyState = EnemyState.CHASING;
+            GameControl_MAIN.gameControl.PlayChaseMusic();
         }
         if (justLooksForPlayer)
         {
@@ -158,6 +159,7 @@ public class EnemyAI : MonoBehaviour {
                     {
                         searchWaitTimer = 0;
                         enemyState = EnemyState.PATROLLING;
+                        GameControl_MAIN.gameControl.PlayMainMusic();
                         elSight.Rend.material.color = new Color32(160, 255, 170, 122);
                     }
                 }
@@ -165,6 +167,7 @@ public class EnemyAI : MonoBehaviour {
                 {
                     searchWaitTimer = 0;
                     enemyState = EnemyState.PATROLLING;
+                    GameControl_MAIN.gameControl.PlayMainMusic();
                     elSight.Rend.material.color = new Color32(160, 255, 170, 122);
                 }
             }

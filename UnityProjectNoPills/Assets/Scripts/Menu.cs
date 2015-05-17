@@ -6,6 +6,7 @@ public class Menu : MonoBehaviour {
     void Start()
     {
         Time.timeScale = 1;
+        AudioListener.pause = false;
     }
 
     public void LoadLevel(string levelName)
@@ -17,9 +18,12 @@ public class Menu : MonoBehaviour {
     public void Mute()
     {
         GameData.gameData.AudioIsOn = !GameData.gameData.AudioIsOn;
+        AudioListener.pause = !GameData.gameData.AudioIsOn;
+    }
 
-        if (GameData.gameData.AudioIsOn) AudioListener.volume = 1;
-        else AudioListener.volume = 0;
+    public void PlaySound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(Resources.Load("water menu noise") as AudioClip);
     }
     
 }

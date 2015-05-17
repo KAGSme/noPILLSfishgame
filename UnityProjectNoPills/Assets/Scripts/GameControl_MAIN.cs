@@ -10,6 +10,7 @@ public class GameControl_MAIN : MonoBehaviour {
     private PlayerCharacter_Health playerHealth;
     public bool isPaused;
     public GameObject trailEffect;
+    AudioSource audioSource;
 
     void OnEnable()
     {
@@ -29,6 +30,8 @@ public class GameControl_MAIN : MonoBehaviour {
         }
         playerHealth = player.GetComponent<PlayerCharacter_Health>();
         Time.timeScale = 1;
+        audioSource = GetComponent<AudioSource>();
+        PlayMainMusic();
 	}
 	
 	// Update is called once per frame
@@ -70,9 +73,7 @@ public class GameControl_MAIN : MonoBehaviour {
     public void Mute()
     {
         GameData.gameData.AudioIsOn = !GameData.gameData.AudioIsOn;
-
-        if (GameData.gameData.AudioIsOn) AudioListener.volume = 1;
-        else AudioListener.volume = 0;
+        AudioListener.pause = !GameData.gameData.AudioIsOn;
     }
 
     public void LoadLevel(string LevelName)
@@ -80,4 +81,19 @@ public class GameControl_MAIN : MonoBehaviour {
         GameData.gameData.LevelStart = true;
         Application.LoadLevel(LevelName);
     }
+
+    public void PlayChaseMusic()
+    {
+        audioSource.Play();
+        Debug.Log("CHASE");
+        Camera.main.GetComponent<AudioSource>().Pause();
+    }
+
+    public void PlayMainMusic()
+    {
+        audioSource.Pause();
+        Debug.Log("PATROL");
+        Camera.main.GetComponent<AudioSource>().UnPause();
+    }
+
 }

@@ -15,6 +15,9 @@ public class PlayerCharacter_Health : MonoBehaviour
     Rigidbody2D rig;
     public GameObject illEffect;
     bool isHit;
+    AudioSource audioSource;
+    AudioClip hitClip;
+    AudioClip healClip;
 
     public float HealthPoints
     {
@@ -31,6 +34,9 @@ public class PlayerCharacter_Health : MonoBehaviour
     {
         healthPoints = 100;
         rig = GetComponent<Rigidbody2D>();
+        hitClip = Resources.Load("Hit_Hurt") as AudioClip;
+        healClip = Resources.Load("Powerup7") as AudioClip;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -91,6 +97,7 @@ public class PlayerCharacter_Health : MonoBehaviour
     {
         if (isInvincible == false) 
         {
+            audioSource.PlayOneShot(hitClip);
             healthPoints -= damage;
             rig.AddRelativeForce(new Vector2(Random.Range(-400, 400), Random.Range(-400, 400)));
             isHit = true;
@@ -99,6 +106,7 @@ public class PlayerCharacter_Health : MonoBehaviour
 
     public void HealthIncrease(int increase)
     {
+        audioSource.PlayOneShot(healClip);
         if (healthPoints < 100) { healthPoints += increase; }
     }
 
