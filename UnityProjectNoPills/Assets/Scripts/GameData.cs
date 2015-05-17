@@ -5,7 +5,7 @@ public class GameData : MonoBehaviour {
 
     public static GameData gameData;
     public Vector3 checkPoint;
-    public bool levelStart = true;
+    private bool levelStart = true;
     public bool audioIsOn = true;
 
     void Start()
