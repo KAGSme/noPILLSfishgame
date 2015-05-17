@@ -73,31 +73,8 @@ public class EnemyAI : MonoBehaviour {
             if (patrolWaitTimer >= patrolWaitTime)
             {
                 patrolWaitTimer = 0;
-                if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
+                if (patrolWayPoints.Length != 1)
                 {
-                    wayPointIndex = -1;
-                }
-                if (wayPointIndex == (patrolWayPoints.Length - 1) && !patrolLoop)
-                {
-                    wayPointIterator = -1;
-                }
-                if (wayPointIndex == 0 && !patrolLoop)
-                {
-                    wayPointIterator = 1;
-                }
-                wayPointIndex += wayPointIterator;
-            }
-            LooksAtSimple(TargetDestination.position);
-        }
-        else
-        {
-            TargetDestination = patrolWayPoints[wayPointIndex];
-            if (DestinationCloseDistanceCheck(TargetDestination.position))
-            {
-                patrolWaitTimer += Time.deltaTime;
-                if (patrolWaitTimer >= patrolWaitTime)
-                {
-                    patrolWaitTimer = 0;
                     if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
                     {
                         wayPointIndex = -1;
@@ -111,6 +88,35 @@ public class EnemyAI : MonoBehaviour {
                         wayPointIterator = 1;
                     }
                     wayPointIndex += wayPointIterator;
+                }
+            }
+            LooksAtSimple(TargetDestination.position);
+        }
+        else
+        {
+            TargetDestination = patrolWayPoints[wayPointIndex];
+            if (DestinationCloseDistanceCheck(TargetDestination.position))
+            {
+                patrolWaitTimer += Time.deltaTime;
+                if (patrolWaitTimer >= patrolWaitTime)
+                {
+                    patrolWaitTimer = 0;
+                    if (patrolWayPoints.Length != 1)
+                    {
+                        if (wayPointIndex == (patrolWayPoints.Length - 1) && patrolLoop)
+                        {
+                            wayPointIndex = -1;
+                        }
+                        if (wayPointIndex == (patrolWayPoints.Length - 1) && !patrolLoop)
+                        {
+                            wayPointIterator = -1;
+                        }
+                        if (wayPointIndex == 0 && !patrolLoop)
+                        {
+                            wayPointIterator = 1;
+                        }
+                        wayPointIndex += wayPointIterator;
+                    }
                 }
             }
             else
