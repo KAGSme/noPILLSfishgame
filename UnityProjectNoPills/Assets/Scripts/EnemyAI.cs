@@ -187,7 +187,7 @@ public class EnemyAI : MonoBehaviour {
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), 8f * Time.deltaTime);
 
-            rigidbodyThis.AddRelativeForce(new Vector2(patrolSpeed, 0));
+            rigidbodyThis.AddRelativeForce(new Vector2(speed, 0));
         }
     }
 
