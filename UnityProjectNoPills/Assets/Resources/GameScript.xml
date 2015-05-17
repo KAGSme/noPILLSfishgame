@@ -20,6 +20,11 @@
     <npCredit>Game was made in conjunction with the noPILLS Organisation</npCredit>
     <pause>Pause</pause>
     <Quit>Quit</Quit>
+    <MissingD>DIALOGUE NOT WRITTEN, DEV FELL ASLEEP O-ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ......</MissingD>
+
+    <L1-1>Jerry: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
+    <L1-2>Jerry: You should take shelter in that cave over there to the right(click/tap anywhere on the screen to move around, tap/click quickly to move faster.)</L1-2>
+    <L1-3>Jerry: It seems that these waters are no longer safe, you’d be best to avoid those nasty fish (Hide in the glowing seaweed to be invisible to the enemy.)</L1-3>
   </English>
   
   <German>
@@ -42,5 +47,10 @@
     <npCredit>Game was made in conjunction with the noPILLS Organisation</npCredit>
     <pause>Pause</pause>
     <Quit>Verlassen</Quit>
+    <MissingD>DIALOGUE nicht geschrieben, FIEL DEV ASLEEP O-ZZZZZZZZZZZZZZZZZZZZZZZZZZZZ ......</MissingD>
+  
+    <L1-1>Jerry: Hey, du da ! Dass Fische scheint echte böse und hungrig.</L1-1>
+    <L1-2>Jerry: Sie sollten Zuflucht in der Höhle dort drüben nehmen nach rechts (Klicken/tippen Sie irgendwo auf dem Bildschirm zu bewegen, tippen Sie auf/klicken Sie schnell sich schneller zu bewegen.)</L1-2>
+    <L1-3>Jerry: Es scheint, dass diese Gewässer nicht mehr sicher sind, können Sie am besten sein würde, um jene bösen Fisch zu vermeiden (Hide in der glühenden Algen unsichtbar für den Feind zu sein.)</L1-3>
   </German>
 </languages>

@@ -79,6 +79,7 @@ public class GameControl_MAIN : MonoBehaviour {
     public void LoadLevel(string LevelName)
     {
         GameData.gameData.LevelStart = true;
+        Debug.Log("Ltrue");
         Application.LoadLevel(LevelName);
     }
 
