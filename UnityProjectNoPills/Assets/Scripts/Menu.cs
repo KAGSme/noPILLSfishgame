@@ -6,7 +6,6 @@ public class Menu : MonoBehaviour {
     void Start()
     {
         Time.timeScale = 1;
-        AudioListener.pause = false;
     }
 
     public void LoadLevel(string levelName)
