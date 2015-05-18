@@ -23,14 +23,20 @@
     <Dialogue>Click and drag to continue...</Dialogue>
     <Next>Next</Next>
 
-    <L1-1>Jerry: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
-    <L1-2>Jerry: You should take shelter in that cave over there to the right(click/tap anywhere on the screen to move around, tap/click quickly to move faster.)</L1-2>
-    <L1-3>Jerry: It seems that these waters are no longer safe, you’d be best to avoid those nasty fish (Hide in the glowing seaweed to be invisible to the enemy.)</L1-3>
-    <L1-4>Jerry: Look Health!</L1-4>
+    <L1-1>Snaily: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
+    <L1-2>Snaily: You should take shelter in that cave over there to the right (Hold finger where you want to go, tap for a speed boost!)</L1-2>
+    <L1-3>Snaily: Glowing seaweed like this will hide you from bad fish! see?</L1-3>
+    <L1-4>Snaily: Look Health!</L1-4>
     <L1-5>You: Why are all the other fish acting weird?</L1-5>
-    <L1-6>You: Oh no, this doesn't look good</L1-6>
+    <L1-6>You: Oh no, this doesn't look good.</L1-6>
+    <L1-7>You: These pills are making me feel ill, yuck!</L1-7>
 
-    <L2-1></L2-1>
+    <L2-1>Snaily: The pills are making all the fish act strange.</L2-1>
+    <L2-2>Snaily: It is destroying our habitat.</L2-2>
+    <L2-3>You: Things are only getting worse.</L2-3>
+    <L2-4>You: Why do the humans keep throwing away their medication down the toilet?</L2-4>
+    <L2-5>You: Don't the humans know that the best way to dispose of medication is to give it back to the local pharmacist?</L2-5>
+    <L2-6>Snaily: You are getting closer to the water tretment plant, where all the pills are coming from.</L2-6>
 
     <L3-1></L3-1>
 </English>
@@ -57,15 +63,21 @@
     <Quit>Verlassen</Quit>
     <Dialogue>Klicken und ziehen Sie, um fortzufahren...</Dialogue>
     <Next>Nächste</Next>
-  
-    <L1-1>Jerry: Hey, du da ! Dass Fische scheint echte böse und hungrig.</L1-1>
-    <L1-2>Jerry: Sie sollten Zuflucht in der Höhle dort drüben nehmen nach rechts (Klicken/tippen Sie irgendwo auf dem Bildschirm zu bewegen, tippen Sie auf/klicken Sie schnell sich schneller zu bewegen.)</L1-2>
-    <L1-3>Jerry: Es scheint, dass diese Gewässer nicht mehr sicher sind, können Sie am besten sein würde, um jene bösen Fisch zu vermeiden (Hide in der glühenden Algen unsichtbar für den Feind zu sein.)</L1-3>
-    <L1-4>german 4</L1-4>
-    <L1-5>german 5</L1-5>
-    <L1-6>german 6</L1-6>
-  
-    <L2-1></L2-1>
+
+    <L1-1>Snaily: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
+    <L1-2>Snaily: You should take shelter in that cave over there to the right (Hold finger where you want to go, tap for a speed boost!)</L1-2>
+    <L1-3>Snaily: Glowing seaweed like this will hide you from bad fish! see?</L1-3>
+    <L1-4>Snaily: Look Health!</L1-4>
+    <L1-5>You: Why are all the other fish acting weird?</L1-5>
+    <L1-6>You: Oh no, this doesn't look good.</L1-6>
+    <L1-7>You: These pills are making me feel ill, yuck!</L1-7>
+
+    <L2-1>Snaily: The pills are making all the fish act strange.</L2-1>
+    <L2-2>Snaily: It is destroying our habitat.</L2-2>
+    <L2-3>You: Things are only getting worse.</L2-3>
+    <L2-4>You: Why do the humans keep throwing away their medication down the toilet?</L2-4>
+    <L2-5>You: Don't the humans know that the best way to dispose of medication is to give it back to the local pharmacist?</L2-5>
+    <L2-6>Snaily: You are getting closer to the water tretment plant, where all the pills are coming from.</L2-6>
 
     <L3-1></L3-1>
   </German>
