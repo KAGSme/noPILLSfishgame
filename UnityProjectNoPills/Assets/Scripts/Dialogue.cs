@@ -13,6 +13,7 @@ public class Dialogue : MonoBehaviour {
     public string nextLevel;
     Text textComponent;
     int iterator = 0;
+    public Texture btnTexture;
 
     void Awake()
     {
@@ -23,10 +24,6 @@ public class Dialogue : MonoBehaviour {
     {
         if (dialogue)
         {
-            if (Input.GetButtonDown("Fire1") && iterator < linesOfDialogue.Length)
-            {
-                iterator++;
-            }
             if (iterator >= linesOfDialogue.Length)
             {
                 dialogue = false;
@@ -38,6 +35,14 @@ public class Dialogue : MonoBehaviour {
             {
                 textComponent.text = LanguageScriptLoader.languageManager.LoadString(linesOfDialogue[iterator]);
             }
+        }
+    }
+
+    public void Iterate()
+    {
+        if (iterator < linesOfDialogue.Length)
+        {
+            iterator++;
         }
     }
 
@@ -56,6 +61,17 @@ public class Dialogue : MonoBehaviour {
             used = true;
             DialogueState();
             textComponent.text = LanguageScriptLoader.languageManager.LoadString(linesOfDialogue[iterator]);
+        }
+    }
+
+    void OnGUI()
+    {
+        if (dialogue)
+        {
+            if (GUI.Button(new Rect(Screen.width - 150, Screen.height - 150, 100, 100), btnTexture))
+            {
+                Iterate();
+            }
         }
     }
 }
