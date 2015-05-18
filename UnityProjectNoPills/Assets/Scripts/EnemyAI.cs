@@ -234,7 +234,7 @@ public class EnemyAI : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player" && enemyState == EnemyState.CHASING)
         {
             coll.gameObject.GetComponent<PlayerCharacter_Health>().HealthDecrease(damageToPlayer);
         }

@@ -95,7 +95,7 @@ public class PlayerCharacter_Health : MonoBehaviour
 
     public void HealthDecrease(int damage)
     {
-        if (isInvincible == false) 
+        if (!isInvincible && !isInvisible) 
         {
             audioSource.PlayOneShot(hitClip);
             healthPoints -= damage;
