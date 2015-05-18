@@ -83,7 +83,7 @@ public class PlayerCharacter_Health : MonoBehaviour
         {
             illEffect.SetActive(true);
             drunkTimer += Time.deltaTime;
-            rig.AddRelativeForce(new Vector2(Random.Range(-100, 100), Random.Range(-200, 200)));
+            rig.AddRelativeForce(new Vector2(Random.Range(-500, 500), Random.Range(-500, 500)));
             if (drunkTimer > pillEffectTime)
             {
                 illEffect.SetActive(false);
