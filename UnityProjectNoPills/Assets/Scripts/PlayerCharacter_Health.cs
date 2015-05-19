@@ -110,15 +110,6 @@ public class PlayerCharacter_Health : MonoBehaviour
         if (healthPoints < 100) { healthPoints += increase; }
     }
 
-    void OnCollisionEnter2D(Collision2D coll) 
-    {
-        if (coll.gameObject.tag == "Health Pick Up")
-        {
-            Destroy(coll.gameObject);
-            HealthIncrease(healthPickUp);
-        }
-    }
-
     float effectTimer = 0;
     private bool effectIsOn = false;
     public bool EffectIsOn
