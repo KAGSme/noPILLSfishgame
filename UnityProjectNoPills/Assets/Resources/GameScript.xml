@@ -17,7 +17,7 @@
     <Level1>Level 1</Level1>
     <Level2>Level 2</Level2>
     <Level3>Level 3</Level3>
-    <npCredit>Game was made in conjunction with the noPILLS Organisation</npCredit>
+    <npCredit>This game was made in conjunction with the noPILLS Organisation</npCredit>
     <pause>Pause</pause>
     <Quit>Quit</Quit>
     <Dialogue>Click and drag to continue...</Dialogue>
@@ -26,7 +26,7 @@
     <L1-1>Snaily: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
     <L1-2>Snaily: You should take shelter in that cave over there to the right (Hold finger where you want to go, tap for a speed boost!)</L1-2>
     <L1-3>Snaily: Glowing seaweed like this will hide you from bad fish! see?</L1-3>
-    <L1-4>Snaily: Look Health!</L1-4>
+    <L1-4>Snaily: Look a Health pickup!</L1-4>
     <L1-5>You: Why are all the other fish acting weird?</L1-5>
     <L1-6>You: Oh no, this doesn't look good.</L1-6>
     <L1-7>You: These pills are making me feel ill, yuck!</L1-7>
@@ -39,7 +39,7 @@
     <L2-6>Snaily: You are getting closer to the water treatment plant, where all the pills are coming from.</L2-6>
 
     <L3-1>You: This pollution is really starting to destroy my home.</L3-1>
-    <L3-2>Snaily: There is so much pollution of medicine.</L3-2>
+    <L3-2>Snaily: There is so much medicine pollution.</L3-2>
     <L3-3>Snaily: Some pills flushed down the toilet can even change a boy fish into a girl fish!</L3-3>
     <L3-4>Snaily: Some medication in the water is even harmful for a fishes kidneys</L3-4>
     <L3-5>Snaily: You have made it to the water treatment plant, Good job!</L3-5>
