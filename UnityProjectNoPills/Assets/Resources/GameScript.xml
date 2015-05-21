@@ -17,7 +17,7 @@
     <Level1>Level 1</Level1>
     <Level2>Level 2</Level2>
     <Level3>Level 3</Level3>
-    <npCredit>This game was made in conjunction with the noPILLS Organisation</npCredit>
+    <npCredit>This game was made in conjunction with the noPILLS Organisation.</npCredit>
     <pause>Pause</pause>
     <Quit>Quit</Quit>
     <Dialogue>Click and drag to continue...</Dialogue>
@@ -39,11 +39,11 @@
     <L2-6>Snaily: You are getting closer to the water treatment plant, where all the pills are coming from.</L2-6>
 
     <L3-1>You: This pollution is really starting to destroy my home.</L3-1>
-    <L3-2>Snaily: There is so much medicine pollution.</L3-2>
+    <L3-2>Snaily: There is so much medical waste.</L3-2>
     <L3-3>Snaily: Some pills flushed down the toilet can even change a boy fish into a girl fish!</L3-3>
     <L3-4>Snaily: Some medication in the water is even harmful for a fishes kidneys</L3-4>
     <L3-5>Snaily: You have made it to the water treatment plant, Good job!</L3-5>
-    <L3-6>Snaily: You can help avoid all of this and stop damge to the environment.</L3-6>
+    <L3-6>Snaily: You can help avoid all of this and stop damage to the environment.</L3-6>
     <L3-7>Snaily: Make sure you never throw pills down the toilet and make sure you tell your parents!</L3-7>
     <L3-8>Snaily: The best way to get rid of medication is to give the unwanted pills back to your pharmacist.</L3-8>
     <L3-9>Snaily: Thanks for playing!</L3-9>
@@ -66,7 +66,7 @@
     <Level1>Bühne 1</Level1>
     <Level2>Bühne 2</Level2>
     <Level3>Bühne 3</Level3>
-    <npCredit>Game was made in conjunction with the noPILLS Organisation</npCredit>
+    <npCredit>This is german</npCredit>
     <pause>Pause</pause>
     <Quit>Verlassen</Quit>
     <Dialogue>Klicken und ziehen Sie, um fortzufahren...</Dialogue>
