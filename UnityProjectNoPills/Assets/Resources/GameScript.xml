@@ -22,6 +22,7 @@
     <Quit>Quit</Quit>
     <Dialogue>Click and drag to continue...</Dialogue>
     <Next>Next</Next>
+    <Help>Help</Help>
 
     <L1-1>Snaily: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
     <L1-2>Snaily: You should take shelter in that cave over there to the right (Hold finger where you want to go, tap for a speed boost!)</L1-2>
@@ -47,6 +48,11 @@
     <L3-7>Snaily: Make sure you never throw pills down the toilet and make sure you tell your parents!</L3-7>
     <L3-8>Snaily: The best way to get rid of medication is to give the unwanted pills back to your pharmacist.</L3-8>
     <L3-9>Snaily: Thanks for playing!</L3-9>
+
+    <Tutorial1>Stay away from these fish, try to sneak past them. If you enter the vision cone they will start chasing you!</Tutorial1>
+    <Tutorial2>Use these to hide in if you are being chased by unfriendly fish.</Tutorial2>
+    <Tutorial3>Avoid these pills that are polluting the water!</Tutorial3>
+    <Tutorial4>Click and hold the left mouse button to move around. Click rapidly to boost.</Tutorial4>
 </English>
   
   <German>
@@ -71,6 +77,7 @@
     <Quit>Verlassen</Quit>
     <Dialogue>Klicken und ziehen Sie, um fortzufahren...</Dialogue>
     <Next>Nächste</Next>
+    <Help>Hilfe</Help>
 
     <L1-1>Snaily: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
     <L1-2>Snaily: You should take shelter in that cave over there to the right (Hold finger where you want to go, tap for a speed boost!)</L1-2>
@@ -86,7 +93,20 @@
     <L2-4>You: Why do the humans keep throwing away their medication down the toilet?</L2-4>
     <L2-5>You: Don't the humans know that the best way to dispose of medication is to give it back to the local pharmacist?</L2-5>
     <L2-6>Snaily: You are getting closer to the water tretment plant, where all the pills are coming from.</L2-6>
-
-    <L3-1></L3-1>
+    
+    <L3-1>You: This pollution is really starting to destroy my home.</L3-1>
+    <L3-2>Snaily: There is so much medical waste.</L3-2>
+    <L3-3>Snaily: Some pills flushed down the toilet can even change a boy fish into a girl fish!</L3-3>
+    <L3-4>Snaily: Some medication in the water is even harmful for a fishes kidneys</L3-4>
+    <L3-5>Snaily: You have made it to the water treatment plant, Good job!</L3-5>
+    <L3-6>Snaily: You can help avoid all of this and stop damage to the environment.</L3-6>
+    <L3-7>Snaily: Make sure you never throw pills down the toilet and make sure you tell your parents!</L3-7>
+    <L3-8>Snaily: The best way to get rid of medication is to give the unwanted pills back to your pharmacist.</L3-8>
+    <L3-9>Snaily: Thanks for playing!</L3-9>
+  
+    <Tutorial1>Stay away from these fish, try to sneak past them. If you enter the light cone they will start chasing you!</Tutorial1>
+    <Turorial2>Use these to hide in if you are being chased by unfriendly fish.</Turorial2>
+    <Tutorial3>Avoid these pills that are polluting the water!</Tutorial3>
+    <Tutorial4>Click and hold the left mouse button to move around. Click rapidly to boost.</Tutorial4>
   </German>
 </languages>
