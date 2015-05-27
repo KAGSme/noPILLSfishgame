@@ -77,7 +77,7 @@
     <Quit>Beenden</Quit>
     <Dialogue>Click und ziehe um fortzufahren...</Dialogue>
     <Next>Next</Next>
-    <Help>Help</Help>
+    <Help>Hilfe</Help>
 
     <L1-1>Snaily: Hey, Du da! Der Fisch dort scheint sehr böse und hungrig zu sein. </L1-1>
     <L1-2>Snaily: Du solltest dich in der Höhle dort drüben auf der rechten Seite verstecken. (Tippe mit dem Finger dort wo Du hinwillst um schneller voranzukommen.) </L1-2>
@@ -104,9 +104,9 @@
     <L3-8>Snaily: Am besten wirfst du nicht mehr gebrauchte Medikamente in den Hausmüll oder gibst sie der Apotheke zur Entsorgung zurück.</L3-8>
     <L3-9>Snaily: Danke fürs Mitspielen! </L3-9>
   
-    <Tutorial1>Stay away from these fish, try to sneak past them. If you enter the vision cone they will start chasing you!</Tutorial1>
-    <Tutorial2>Use these to hide in if you are being chased by unfriendly fish.</Tutorial2>
-    <Tutorial3>Avoid these pills that are polluting the water!</Tutorial3>
-    <Tutorial4>Click and hold the left mouse button to move around. Click rapidly to boost.</Tutorial4>
+    <Tutorial1>Halte dich von den Fischen fern; versuche, dich daran vorbeizuschleichen. Kommst du in ihr Blickfeld werden sie beginnen, dich zu jagen!</Tutorial1>
+    <Tutorial2>Benutze diese, um dich darin zu verstecken wenn du von unfreundlichen Fischen gejagt wirst.</Tutorial2>
+    <Tutorial3>Vermeide diese Pillen, die das Wasser verseuchen.</Tutorial3>
+    <Tutorial4>Drücke und halte die linke Maustaste, um dich umher zu bewegen. Drücke wiederholt schnell zum Verstärken.</Tutorial4>
 </German>
 </languages>
