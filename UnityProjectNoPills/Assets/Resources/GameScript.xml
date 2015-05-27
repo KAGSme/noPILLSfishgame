@@ -56,57 +56,57 @@
 </English>
   
   <German>
-    <healthText>Gesundheit:</healthText>
-    <staminaText>Ausdauer: </staminaText>
+    <healthText>Health:</healthText>
+    <staminaText>Stamina: </staminaText>
 
-    <one-1>eins</one-1>
-    <one-2>zwei</one-2>
-    <one-3>drei</one-3>
+    <one-1>Eins</one-1>
+    <one-2>Zwei</one-2>
+    <one-3>Drei</one-3>
 
-    <MainMenu>Hauptmenü</MainMenu>
-    <LevelSelect>Bühne Auswählen</LevelSelect>
-    <Play>Spielen</Play>
-    <Mute>Stumm</Mute>
+    <MainMenu>Hauptmenu</MainMenu>
+    <LevelSelect>Wähle Schwierigkeitsgrad </LevelSelect>
+    <Play>Spiele</Play>
+    <Mute>Stumm schalten</Mute>
     <Back>Zurück</Back>
-    <Credits>Credits</Credits>
-    <Level1>Bühne 1</Level1>
-    <Level2>Bühne 2</Level2>
-    <Level3>Bühne 3</Level3>
-    <npCredit>This is german</npCredit>
+    <Credits>Punkte</Credits>
+    <Level1>Schwierigkeitsgrad 1</Level1>
+    <Level2>Schwierigkeitsgrad 2</Level2>
+    <Level3>Schwierigkeitsgrad 3</Level3>
+    <npCredit>Diese Spiel wurde im Rahmen des Projekts /im Zusammenhang mit dem Projekt noPills entwickelt.</npCredit>
     <pause>Pause</pause>
-    <Quit>Verlassen</Quit>
-    <Dialogue>Klicken und ziehen Sie, um fortzufahren...</Dialogue>
-    <Next>Nächste</Next>
-    <Help>Hilfe</Help>
+    <Quit>Beenden</Quit>
+    <Dialogue>Click und ziehe um fortzufahren...</Dialogue>
+    <Next>Next</Next>
+    <Help>Help</Help>
 
-    <L1-1>Snaily: Hey, you there! That fish there seems real nasty and hungry.</L1-1>
-    <L1-2>Snaily: You should take shelter in that cave over there to the right (Hold finger where you want to go, tap for a speed boost!)</L1-2>
-    <L1-3>Snaily: Glowing seaweed like this will hide you from bad fish! see?</L1-3>
-    <L1-4>Snaily: Look Health!</L1-4>
-    <L1-5>You: Why are all the other fish acting weird?</L1-5>
-    <L1-6>You: Oh no, this doesn't look good.</L1-6>
-    <L1-7>You: These pills are making me feel ill, yuck!</L1-7>
+    <L1-1>Snaily: Hey, Du da! Der Fisch dort scheint sehr böse und hungrig zu sein. </L1-1>
+    <L1-2>Snaily: Du solltest dich in der Höhle dort drüben auf der rechten Seite verstecken. (Tippe mit dem Finger dort wo Du hinwillst um schneller voranzukommen.) </L1-2>
+    <L1-3>Snaily: Solch leuchtender Seetang versteckt dich/euch vor den bösen Fischen! Schau?</L1-3>
+    <L1-4>Snaily: Schau, ein Gesundheitsbonus!</L1-4>
+    <L1-5>You: Warum verhalten sich die anderen Fische so seltsam?</L1-5>
+    <L1-6>You: Oh nein, das sieht nicht gut aus. </L1-6>
+    <L1-7>You: Diese Medikamente/Pillen machen mich krank, igitt! </L1-7>
 
-    <L2-1>Snaily: The pills are making all the fish act strange.</L2-1>
-    <L2-2>Snaily: It is destroying our habitat.</L2-2>
-    <L2-3>You: Things are only getting worse.</L2-3>
-    <L2-4>You: Why do the humans keep throwing away their medication down the toilet?</L2-4>
-    <L2-5>You: Don't the humans know that the best way to dispose of medication is to give it back to the local pharmacist?</L2-5>
-    <L2-6>Snaily: You are getting closer to the water tretment plant, where all the pills are coming from.</L2-6>
-    
-    <L3-1>You: This pollution is really starting to destroy my home.</L3-1>
-    <L3-2>Snaily: There is so much medical waste.</L3-2>
-    <L3-3>Snaily: Some pills flushed down the toilet can even change a boy fish into a girl fish!</L3-3>
-    <L3-4>Snaily: Some medication in the water is even harmful for a fishes kidneys</L3-4>
-    <L3-5>Snaily: You have made it to the water treatment plant, Good job!</L3-5>
-    <L3-6>Snaily: You can help avoid all of this and stop damage to the environment.</L3-6>
-    <L3-7>Snaily: Make sure you never throw pills down the toilet and make sure you tell your parents!</L3-7>
-    <L3-8>Snaily: The best way to get rid of medication is to give the unwanted pills back to your pharmacist.</L3-8>
-    <L3-9>Snaily: Thanks for playing!</L3-9>
+    <L2-1>Snaily: Durch diese Medikamente/Pillen verhalten sich alle Fische komisch.</L2-1>
+    <L2-2>Snaily: Sie zerstören unseren Lebensraum.</L2-2>
+    <L2-3>You: Es wird immer schlimmer.</L2-3>
+    <L2-4>You: Warum werfen die Menschen immer wieder ihre Medikamente in die Toilette?</L2-4>
+    <L2-5>You: Wissen die Menschen nicht, dass man die Medikamente am besten in den Hausmüll wirft?</L2-5>
+    <L2-6>Snaily: Du kommst immer näher an die Kläranlage heran, aus der die Medikamentenreste herausgespült werden.</L2-6>
+
+    <L3-1>You: Diese Umweltverschmutzung fängt an, mein Zuhause zu zerstören.</L3-1>
+    <L3-2>Snaily: Es gibt so viel Medikamentenabfall.</L3-2>
+    <L3-3>Snaily: Einige der Medikamentenreste, die über die Toilette ins Wasser gelangen, können einen männlichen Fisch sogar in einen weiblichen Fisch verwandeln.</L3-3>
+    <L3-4>Snaily: Einige der Medikamentenreste im Wasser sind schädlich für die Nieren der Fische. </L3-4>
+    <L3-5>Snaily: Du hast es bis zur Kläranlage geschafft! Gut gemacht! </L3-5>
+    <L3-6>Snaily: Auch Du kannst dein Verhalten verändern und die Umweltverschmutzung aufhalten. </L3-6>
+    <L3-7>Snaily: Schau, dass Du niemals Medikamente in die Toilette oder Spüle entsorgst. Und informiere Deine Familie und Freunde über das Problem! </L3-7>
+    <L3-8>Snaily: Am besten wirfst du nicht mehr gebrauchte Medikamente in den Hausmüll oder gibst sie der Apotheke zur Entsorgung zurück.</L3-8>
+    <L3-9>Snaily: Danke fürs Mitspielen! </L3-9>
   
-    <Tutorial1>Stay away from these fish, try to sneak past them. If you enter the light cone they will start chasing you!</Tutorial1>
-    <Turorial2>Use these to hide in if you are being chased by unfriendly fish.</Turorial2>
+    <Tutorial1>Stay away from these fish, try to sneak past them. If you enter the vision cone they will start chasing you!</Tutorial1>
+    <Tutorial2>Use these to hide in if you are being chased by unfriendly fish.</Tutorial2>
     <Tutorial3>Avoid these pills that are polluting the water!</Tutorial3>
     <Tutorial4>Click and hold the left mouse button to move around. Click rapidly to boost.</Tutorial4>
-  </German>
+</German>
 </languages>
